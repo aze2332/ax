@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: comite-ethique
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    plan: free
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SESSION_SECRET
+        generateValue: true        # Render génère automatiquement une valeur sécurisée
+    disk:
+      name: comite-data
+      mountPath: /data             # Dossier persistant pour la base SQLite
+      sizeGB: 1
