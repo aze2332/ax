@@ -106,9 +106,9 @@ db.exec(`
 // ============================================================
 const adminExists = db.prepare('SELECT id FROM admins WHERE username = ?').get('admin');
 if (!adminExists) {
-  const hash = bcrypt.hashSync('comite2026', 12);
+  const hash = bcrypt.hashSync('aze23aze23', 12);
   db.prepare('INSERT INTO admins (username, password, name) VALUES (?, ?, ?)')
-    .run('admin', hash, 'Administrateur Principal');
+    .run('aze', hash, 'Aze');
   console.log('[INIT] Compte admin créé : admin / comite2026');
   console.log('[⚠]   Changez ce mot de passe via le panneau admin !');
 }
